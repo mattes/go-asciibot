@@ -5,6 +5,8 @@ All credits go to [Matthew Walsh](https://github.com/walsh9/asciibots).
 
 ## Usage
 
+[![GoDoc](https://godoc.org/github.com/mattes/go-asciibot?status.svg)](https://godoc.org/github.com/mattes/go-asciibot)
+
 ```
 import "github.com/mattes/go-asciibot"
 
