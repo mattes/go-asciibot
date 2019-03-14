@@ -13,6 +13,7 @@ func init() {
 
 var (
 	ErrIDLength = fmt.Errorf("id length must be 5")
+	ErrIDHex    = fmt.Errorf("id must be 5 hexadecimal characters [0-9a-f]")
 )
 
 func Random() string {
@@ -41,6 +42,11 @@ func Generate(id string) (string, error) {
 		return "", ErrIDLength
 	}
 
+	id = strings.Map(hexOnly, id)
+	if len(id) != 5 {
+		return "", ErrIDHex
+	}
+
 	out := ""
 
 	// generate body
@@ -58,6 +64,17 @@ func Generate(id string) (string, error) {
 	out = replace(out, mouths[id[4:5]], 7, 2)
 
 	return out, nil
+}
+
+func hexOnly(r rune) rune {
+	switch r {
+	case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
+		return r
+	case 'a', 'b', 'c', 'd', 'e', 'f':
+		return r
+	default:
+		return -1
+	}
 }
 
 // split splits template into top, center and bottom parts
