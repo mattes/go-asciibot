@@ -3,6 +3,11 @@
 I found this awesome lib to generate random ascii bots and ported it to Golang.
 All credits go to [Matthew Walsh](https://github.com/walsh9/asciibots).
 
+Cowsay versions:
+* https://github.com/xyproto/botsay
+* https://github.com/mdwhatcott/botsay
+
+
 ## Usage
 
 [![GoDoc](https://godoc.org/github.com/mattes/go-asciibot?status.svg)](https://godoc.org/github.com/mattes/go-asciibot)
